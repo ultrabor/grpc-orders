@@ -1,0 +1,6 @@
+CREATE TABLE orders (
+  id BIGSERIAL PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  amount NUMERIC(10,2) NOT NULL,
+  status TEXT NOT NULL DEFAULT 'created'
+);

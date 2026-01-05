@@ -1,0 +1,33 @@
+syntax = "proto3"; 
+
+package order.v1; 
+
+option go_package = "github.com/ultrabor/grpc-orders/proto/orderpb;orderpb"; 
+
+message Order { 
+    int64 id = 1; 
+    string user_id = 2; 
+    double amount = 3; 
+    string status = 4; 
+}
+
+message CreateOrderRequest { 
+    string user_id = 1; 
+    double amount = 2; 
+} 
+
+message GetOrderRequest { 
+    int64 id = 1; 
+} 
+
+message OrderResponse { 
+    Order order = 1; 
+} 
+
+message Empty {} 
+
+service OrderService { 
+    rpc CreateOrder(CreateOrderRequest) returns (OrderResponse); 
+    rpc GetOrder(GetOrderRequest) returns (OrderResponse); 
+    rpc ListOrders(Empty) returns (stream OrderResponse); 
+}

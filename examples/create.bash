@@ -1,0 +1,1 @@
+grpcurl -plaintext   -d '{"user_id":"user123","amount":150.5}'   localhost:50051 order.v1.OrderService/CreateOrder

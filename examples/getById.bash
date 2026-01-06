@@ -1,0 +1,1 @@
+grpcurl -plaintext   -d '{"id":1}'   localhost:50051 order.v1.OrderService/GetOrder

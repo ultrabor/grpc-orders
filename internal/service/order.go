@@ -13,6 +13,7 @@ type OrderService struct {
 }
 
 func NewOrderService(repo repository.OrderRepository) *OrderService {
+
 	return &OrderService{repo: repo}
 }
 

@@ -1,0 +1,1 @@
+grpcurl -plaintext   -d '{}'   localhost:50051 order.v1.OrderService/ListOrders
